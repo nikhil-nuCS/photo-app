@@ -1,0 +1,234 @@
+/* * {
+  outline: solid 0.15rem rgba(101, 2, 2, 0.5);
+} */
+
+body {
+    background-color: gainsboro;
+}
+
+.top-nav-bar {
+    /* display: flex; */
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 50px;
+    background-color: white;
+    border-bottom: 1px solid gray ;
+}
+
+.top-nav-content {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 9px;
+}
+
+#top-nav-bar-title {
+    float: left;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20pt;
+    /* margin-left: 10%; */
+}
+
+#top-nav-bar-userbox {
+    float: right;
+    /* margin-right: 10%; */
+    /* margin-top: 5px; */
+}
+
+.top-nav-bar-user-optionbox {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 14pt;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.page-content {
+    position: relative;
+    margin-top: 5%;
+    margin-left: 10%;
+    display: flex;
+}
+
+#stories-panel {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    border: 2px solid gray;
+    background-color: white;
+    border-radius: 12px;
+    overflow: auto;
+}
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background-color: transparent;
+}
+
+.stories-panel-card-item {
+    align-items: center;
+    width: fit-content;
+    padding: 0;
+    margin: 15px;
+}
+
+.stories-panel-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stories-panel-card-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.photoapp-post-card {
+    /* display: inline-block; */
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+}
+
+.photoapp-post-panel .photoapp-post-item {
+    padding: 0;
+    border: 2px solid gray;
+    border-radius: 12px;
+    background-color: white;
+    width: 100%;
+}
+
+.photoapp-post-panel .photoapp-post-item .photoapp-post-card #post-username {
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
+
+.photoapp-post-panel .photoapp-post-item .photoapp-post-card .post-image {
+    width: 100%;
+    height: 370px;
+}
+
+.photoapp-post-panel .photoapp-post-item .photoapp-post-card .post-options-and-details {
+    margin-left: 20px;
+}
+
+.photoapp-post-panel .photoapp-post-item .photoapp-post-card .post-options-and-details .post-options {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.photoapp-post-panel .photoapp-post-item .photoapp-post-card .post-options-and-details .post-options #left-post-options .left-post-option-btn {
+    width: 30px;
+    height: 30px;
+}
+
+.photoapp-post-panel .photoapp-post-item .photoapp-post-card .post-options-and-details .post-options #right-post-options {
+    margin-right: 10px;
+}
+
+.photoapp-post-panel .photoapp-post-item .photoapp-post-card .post-options-and-details .post-options #right-post-options .left-post-option-btn {
+    width: 30px;
+    height: 30px;
+}
+
+.photoapp-post-panel .photoapp-post-item .photoapp-post-card .post-options-and-details #post-like-count{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15pt;
+}
+
+.photoapp-post-panel .photoapp-post-item .photoapp-post-card .post-comments-panel {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 11pt;
+}
+
+.photoapp-post-panel .photoapp-post-item .photoapp-post-card .post-time {
+    color: gray;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10pt;
+}
+
+.photoapp-post-panel .photoapp-post-item .photoapp-post-card .post-user-comments {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.page-content .right-column {
+    margin-left: 50px;
+    margin-bottom: 50px;
+    /* border: 1px solid grey; */
+    width: 30%;
+    height: fit-content;
+}
+
+.page-content .right-column .user-information {
+    display: flex;
+    /* justify-content: space-evenly; */
+    align-items: center;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.page-content .right-column #right-column-username {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16pt;
+    margin-left: 10px;
+}
+
+.page-content .user-information #right-column-user-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.suggestion-for-user .suggestion-for-user-item {
+    padding: 0;
+}
+
+.suggestion-for-user-item .suggestion-for-user-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.suggestion-for-user #suggestion-for-user-title {
+    font-size: 15pt;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
+}
+
+.suggestion-for-user-item .suggestion-for-user-card #suggestion-for-user-pp {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.suggestion-for-user-card #suggested-user-id-info {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+/* Mobile Phone Media Query */
+@media only screen and (max-width: 480px) {
+    body {
+        background-color: bisque;
+    }
+    .page-content .right-column {
+        display: none;
+    }
+}
