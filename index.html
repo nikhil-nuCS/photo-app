@@ -2,256 +2,490 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <title>Photo App</title>
-    <link rel="stylesheet" href="style.css" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <meta charset="UTF-8" />
+  <title>Photo App</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Comfortaa|Lato|Assistant" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
+  <header>
     <nav class="top-nav-bar">
-        <div class="top-nav-content">
-            <div id="top-nav-bar-title">Photo App</div>
-            <div id="top-nav-bar-userbox">
-                <label class="top-nav-bar-user-optionbox"> username </label>
-                <button class="top-nav-bar-user-optionbox">Sign out</button>
-            </div>
+      <div class="top-nav-container">
+        <div id="top-nav-bar-title">
+          <h4>Photo App</h4>
         </div>
+        <div id="top-nav-bar-userbox">
+          <label id="top-nav-bar-username"> gojoSatoru </label>
+          <button id="top-nav-bar-logout"> Sign out</button>
+        </div>
+      </div>
     </nav>
+  </header>
 
+  <main>
     <div class="page-content">
-        <div class="left-column">
-            <div id="stories-panel">
-                <ul class="stories-panel-card-item">
-                    <div class="stories-panel-card">
-                        <img class="stories-panel-card-image"
-                            src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_1280.png" />
-                        <label class="stories-panel-card-label">username_1</label>
-                    </div>
-                </ul>
-                <ul class="stories-panel-card-item">
-                    <div class="stories-panel-card">
-                        <img class="stories-panel-card-image"
-                            src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_1280.png" />
-                        <label class="stories-panel-card-label">username_2</label>
-                    </div>
-                </ul>
-                <ul class="stories-panel-card-item">
-                    <div class="stories-panel-card">
-                        <img class="stories-panel-card-image"
-                            src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_1280.png" />
-                        <label class="stories-panel-card-label">username_3</label>
-                    </div>
-                </ul>
-                <ul class="stories-panel-card-item">
-                    <div class="stories-panel-card">
-                        <img class="stories-panel-card-image"
-                            src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_1280.png" />
-                        <label class="stories-panel-card-label">username_4</label>
-                    </div>
-                </ul>
-                <ul class="stories-panel-card-item">
-                    <div class="stories-panel-card">
-                        <img class="stories-panel-card-image"
-                            src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_1280.png" />
-                        <label class="stories-panel-card-label">username_5</label>
-                    </div>
-                </ul>
-                <ul class="stories-panel-card-item">
-                    <div class="stories-panel-card">
-                        <img class="stories-panel-card-image"
-                            src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_1280.png" />
-                        <label class="stories-panel-card-label">username_6</label>
-                    </div>
-                </ul>
+      <div class="left-column">
+        <div id="stories-panel">
+          <ul id="stories-panel-content">
+            <li class="stories-panel-item">
+              <div class="stories-panel-card">
+                <div id="stories-panel-image-background">
+                  <div id="stories-panel-card-image">
+                    <img class="stories-panel-image" src="https://picsum.photos/id/102/400" alt="stories picture" />
+                  </div>
+                </div>
+                <label class="stories-panel-card-label">startango</label>
+              </div>
+            </li>
 
-            </div>
+            <li class="stories-panel-item">
+              <div class="stories-panel-card">
+                <div id="stories-panel-image-background">
+                  <div id="stories-panel-card-image">
+                    <img class="stories-panel-image" src="https://picsum.photos/id/33/400" alt="stories picture" />
+                  </div>
+                </div>
+                <label class="stories-panel-card-label">cozmo_bolly</label>
+              </div>
+            </li>
 
-            <div class = "photoapp-post-panel">
-                <ul class = "photoapp-post-item">
-                    <div class = "photoapp-post-card">
-                        <label id = "post-username">Username</label>
-                        <img class = "post-image" src = "https://cdn.pixabay.com/photo/2022/01/25/12/53/tree-6966126_1280.jpg">
-                        <div class = "post-options-and-details">
-                            <div class = "post-options">
-                                <div id = "left-post-options">
-                                    <button class = "left-post-option-btn">H</button>
-                                    <button class = "left-post-option-btn">C</button>
-                                    <button class = "left-post-option-btn">S</button>
-                                </div>
-                                <div id = "right-post-options">
-                                    <button class = "left-post-option-btn">B</button>
-                                </div>
-                            </div>
-                            <label id = "post-like-count">30 likes</label>
-                            <div class = "post-comments-panel">
-                                <p><b>username1</b> Comment 1</p>
-                                <p><b>username2</b> Comment 2</p>
-                                <p><b>username3</b> Comment 3</p>
-                            </div>
-                            <label class = "post-time"> 1 DAY AGO</label>
-                            <div class = "post-user-comments">
-                                <button>Emoji</button>
-                                <label>Comments</label>
-                                <button>Post</button>
-                            </div>
-                        </div>
-                    </div>
-                </ul>
+            <li class="stories-panel-item">
+              <div class="stories-panel-card">
+                <div id="stories-panel-image-background">
+                  <div id="stories-panel-card-image">
+                    <img class="stories-panel-image" src="https://picsum.photos/id/44/400" alt="stories picture" />
+                  </div>
+                </div>
+                <label class="stories-panel-card-label">lovebuckeye</label>
+              </div>
+            </li>
 
-                
-                <ul class = "photoapp-post-item">
-                    <div class = "photoapp-post-card">
-                        <label id = "post-username">Username</label>
-                        <img class = "post-image" src = "https://cdn.pixabay.com/photo/2022/03/27/12/46/china-7094961_1280.jpg">
-                        <div class = "post-options-and-details">
-                            <div class = "post-options">
-                                <div id = "left-post-options">
-                                    <button class = "left-post-option-btn">H</button>
-                                    <button class = "left-post-option-btn">C</button>
-                                    <button class = "left-post-option-btn">S</button>
-                                </div>
-                                <div id = "right-post-options">
-                                    <button class = "left-post-option-btn">B</button>
-                                </div>
-                            </div>
-                            <label id = "post-like-count">30 likes</label>
-                            <div class = "post-comments-panel">
-                                <p><b>username1</b> Comment 1</p>
-                                <p><b>username2</b> Comment 2</p>
-                                <p><b>username3</b> Comment 3</p>
-                            </div>
-                            <label class = "post-time"> 1 DAY AGO</label>
-                            <div class = "post-user-comments">
-                                <button>Emoji</button>
-                                <label>Comments</label>
-                                <button>Post</button>
-                            </div>
-                        </div>
-                    </div>
-                </ul>
+            <li class="stories-panel-item">
+              <div class="stories-panel-card">
+                <div id="stories-panel-image-background">
+                  <div id="stories-panel-card-image">
+                    <img class="stories-panel-image" src="https://picsum.photos/id/96/400" alt="stories picture" />
+                  </div>
+                </div>
+                <label class="stories-panel-card-label">napretep</label>
+              </div>
+            </li>
 
-
-                <ul class = "photoapp-post-item">
-                    <div class = "photoapp-post-card">
-                        <label id = "post-username">Username</label>
-                        <img class = "post-image" src = "https://cdn.pixabay.com/photo/2022/03/01/09/15/salad-7040875_1280.jpg">
-                        <div class = "post-options-and-details">
-                            <div class = "post-options">
-                                <div id = "left-post-options">
-                                    <button class = "left-post-option-btn">H</button>
-                                    <button class = "left-post-option-btn">C</button>
-                                    <button class = "left-post-option-btn">S</button>
-                                </div>
-                                <div id = "right-post-options">
-                                    <button class = "left-post-option-btn">B</button>
-                                </div>
-                            </div>
-                            <label id = "post-like-count">30 likes</label>
-                            <div class = "post-comments-panel">
-                                <p><b>username1</b> Comment 1</p>
-                                <p><b>username2</b> Comment 2</p>
-                                <p><b>username3</b> Comment 3</p>
-                            </div>
-                            <label class = "post-time"> 1 DAY AGO</label>
-                            <div class = "post-user-comments">
-                                <button>Emoji</button>
-                                <label>Comments</label>
-                                <button>Post</button>
-                            </div>
-                        </div>
-                    </div>
-                </ul>
-
-
-                <ul class = "photoapp-post-item">
-                    <div class = "photoapp-post-card">
-                        <label id = "post-username">Username</label>
-                        <img class = "post-image" src = "https://cdn.pixabay.com/photo/2022/03/23/18/56/beach-7087722_1280.jpg">
-                        <div class = "post-options-and-details">
-                            <div class = "post-options">
-                                <div id = "left-post-options">
-                                    <button class = "left-post-option-btn">H</button>
-                                    <button class = "left-post-option-btn">C</button>
-                                    <button class = "left-post-option-btn">S</button>
-                                </div>
-                                <div id = "right-post-options">
-                                    <button class = "left-post-option-btn">B</button>
-                                </div>
-                            </div>
-                            <label id = "post-like-count">30 likes</label>
-                            <div class = "post-comments-panel">
-                                <p><b>username1</b> Comment 1</p>
-                                <p><b>username2</b> Comment 2</p>
-                                <p><b>username3</b> Comment 3</p>
-                            </div>
-                            <label class = "post-time"> 1 DAY AGO</label>
-                            <div class = "post-user-comments">
-                                <button>Emoji</button>
-                                <label>Comments</label>
-                                <button>Post</button>
-                            </div>
-                        </div>
-                    </div>
-                </ul>
-
-            </div>
+            <li class="stories-panel-item">
+              <div class="stories-panel-card">
+                <div id="stories-panel-image-background">
+                  <div id="stories-panel-card-image">
+                    <img class="stories-panel-image" src="https://picsum.photos/id/7/400" alt="stories picture" />
+                  </div>
+                </div>
+                <label class="stories-panel-card-label">dodot_bird</label>
+              </div>
+            </li>
+          </ul>
         </div>
-        <div class = "right-column">
-            <div class = "user-information">
-                <img id = "right-column-user-image" src = "https://cdn.pixabay.com/photo/2017/11/10/05/48/user-2935527_1280.png">
-                <lable id = "right-column-username">Username</lable>
-            </div>
-            <div class ="suggestion-for-user">
-                <label id = "suggestion-for-user-title">Suggestions for you</label>
-                <ul class = "suggestion-for-user-item">
-                    <div class = "suggestion-for-user-card">
-                        <img id = "suggestion-for-user-pp" src = "https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814050_1280.png">
-                        <div id = "suggested-user-id-info">
-                            <label id = "suggested-user-id-name"> Username </label>
-                            <label> Suggested for you </label>
-                        </div>
-                        <button> Follow </button>
+
+        <div class="post-panel">
+          <ul class="post-list">
+            <li id="post-item">
+              <div class="post-cardview">
+                <div class="post-card-header">
+                  <label id="post-publisher">warshiptoto</label>
+                  <span class="material-icons" > more_horiz </span>
+                </div>
+                <div class="post-image-view">
+                  <img id="post-image" src="https://cdn.pixabay.com/photo/2022/03/27/12/46/china-7094961_1280.jpg"
+                    alt="posted image" />
+                </div>
+                <div class="post-details">
+                  <div class="post-options">
+                    <div id="post-options-right">
+                      <span id="post-options-icon" class="material-icons">favorite_border</span>
+                      <span id="post-options-icon" class="material-icons">chat_bubble_outline</span>
+                      <span id="post-options-icon" class="material-icons">send</span>
                     </div>
-                </ul>
 
-                <ul class = "suggestion-for-user-item">
-                    <div class = "suggestion-for-user-card">
-                        <img id = "suggestion-for-user-pp" src = "https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814050_1280.png">
-                        <div id = "suggested-user-id-info">
-                            <label id = "suggested-user-id-name"> Username </label>
-                            <label> Suggested for you </label>
-                        </div>
-                        <button> Follow </button>
+                    <div id="post-options-left">
+                      <span class="material-icons">bookmark_border</span>
                     </div>
-                </ul>
+                  </div>
 
+                  <div class="post-likes">
+                    <label id="post-likes-count">31 likes</label>
+                  </div>
 
-                <ul class = "suggestion-for-user-item">
-                    <div class = "suggestion-for-user-card">
-                        <img id = "suggestion-for-user-pp" src = "https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814050_1280.png">
-                        <div id = "suggested-user-id-info">
-                            <label id = "suggested-user-id-name"> Username </label>
-                            <label> Suggested for you </label>
-                        </div>
-                        <button> Follow </button>
+                  <div class="post-caption">
+                    <span id="post-caption-username">warshiptoto</span>
+                    <span id="post-caption-text">Here is a caption on the photo.
+                    </span>
+                    <button id="post-caption-more"> more</button>
+                  </div>
+
+                  <div class="post-comments">
+                    <div id="post-comment-card">
+                      <span id="post-comment-username">dodot_bird</span>
+                      <span id="post-comment-text">Here is a comment on the photo.
+                      </span>
                     </div>
-                </ul>
 
-
-                <ul class = "suggestion-for-user-item">
-                    <div class = "suggestion-for-user-card">
-                        <img id = "suggestion-for-user-pp" src = "https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814050_1280.png">
-                        <div id = "suggested-user-id-info">
-                            <label id = "suggested-user-id-name"> Username </label>
-                            <label> Suggested for you </label>
-                        </div>
-                        <button> Follow </button>
+                    <div id="post-comment-card">
+                      <span id="post-comment-username">lovebuckeye</span>
+                      <span id="post-comment-text">Here is a comment on the photo.
+                      </span>
                     </div>
-                </ul>
-            </div>
+
+                    <div id="post-comment-date">
+                      <span id="post-comment-date-text">1 DAY AGO</span>
+                    </div>
+                  </div>
+                </div>
+                <div id="post-divider-line"></div>
+
+                <div class="post-user-comments">
+                  <div id="post-comment-feature">
+                    <span id="post-comment-emoji" class="material-icons">sentiment_satisfied_alt</span>
+                    <span id="post-comment">Add a comment ...</span>
+                  </div>
+                  <button id="post-comment-publish">Post</button>
+                </div>
+              </div>
+            </li>
+
+            <li id="post-item">
+              <div class="post-cardview">
+                <div class="post-card-header">
+                  <label id="post-publisher">napretep</label>
+                  <span class="material-icons"> more_horiz </span>
+                </div>
+                <div class="post-image-view">
+                  <img id="post-image" src="https://cdn.pixabay.com/photo/2022/01/25/12/53/tree-6966126_1280.jpg"
+                    alt="posted image" />
+                </div>
+                <div class="post-details">
+                  <div class="post-options">
+                    <div id="post-options-right">
+                      <span id="post-options-icon" class="material-icons">favorite_border</span>
+                      <span id="post-options-icon" class="material-icons">chat_bubble_outline</span>
+                      <span id="post-options-icon" class="material-icons">send</span>
+                    </div>
+
+                    <div id="post-options-left">
+                      <span class="material-icons">bookmark_border</span>
+                    </div>
+                  </div>
+
+                  <div class="post-likes">
+                    <label id="post-likes-count">31 likes</label>
+                  </div>
+
+                  <div class="post-caption">
+                    <span id="post-caption-username">napretep</span>
+                    <span id="post-caption-text">Here is a caption on the photo.
+                    </span>
+                    <button id="post-caption-more"> more</button>
+                  </div>
+
+                  <div class="post-comments">
+                    <div id="post-comment-card">
+                      <span id="post-comment-username">dharmajustin</span>
+                      <span id="post-comment-text">Here is a comment on the photo.
+                      </span>
+                    </div>
+
+                    <div id="post-comment-card">
+                      <span id="post-comment-username">chaosbear</span>
+                      <span id="post-comment-text">Here is a comment on the photo.
+                      </span>
+                    </div>
+
+                    <div id="post-comment-date">
+                      <span id="post-comment-date-text">1 DAY AGO</span>
+                    </div>
+                  </div>
+                </div>
+                <div id="post-divider-line"></div>
+
+                <div class="post-user-comments">
+                  <div id="post-comment-feature">
+                    <span id="post-comment-emoji" class="material-icons">sentiment_satisfied_alt</span>
+                    <!-- <span id="post-comment">Add a comment ...</span> -->
+                    <input id="post-comment" type="text" placeholder="Add a comment ...">
+                  </div>
+                  <button id="post-comment-publish">Post</button>
+                </div>
+              </div>
+            </li>
+
+            <li id="post-item">
+              <div class="post-cardview">
+                <div class="post-card-header">
+                  <label id="post-publisher">linuxthyme</label>
+                  <span class="material-icons"> more_horiz </span>
+                </div>
+                <div class="post-image-view">
+                  <img id="post-image" src="https://cdn.pixabay.com/photo/2019/11/07/17/07/universe-4609408_1280.jpg"
+                    alt="posted image" />
+                </div>
+                <div class="post-details">
+                  <div class="post-options">
+                    <div id="post-options-right">
+                      <span id="post-options-icon" class="material-icons">favorite_border</span>
+                      <span id="post-options-icon" class="material-icons">chat_bubble_outline</span>
+                      <span id="post-options-icon" class="material-icons">send</span>
+                    </div>
+
+                    <div id="post-options-left">
+                      <span class="material-icons">bookmark_border</span>
+                    </div>
+                  </div>
+
+                  <div class="post-likes">
+                    <label id="post-likes-count">31 likes</label>
+                  </div>
+
+                  <div class="post-caption">
+                    <span id="post-caption-username">linuxthyme</span>
+                    <span id="post-caption-text">Here is a caption on the photo.
+                    </span>
+                    <button id="post-caption-more"> more</button>
+                  </div>
+
+                  <div class="post-comments">
+                    <div id="post-comment-card">
+                      <span id="post-comment-username">nan0m3t3r</span>
+                      <span id="post-comment-text">Here is a comment on the photo.
+                      </span>
+                    </div>
+
+                    <div id="post-comment-card">
+                      <span id="post-comment-username">cassisdopatines</span>
+                      <span id="post-comment-text">Here is a comment on the photo.
+                      </span>
+                    </div>
+
+                    <div id="post-comment-date">
+                      <span id="post-comment-date-text">1 DAY AGO</span>
+                    </div>
+                  </div>
+                </div>
+                <div id="post-divider-line"></div>
+
+                <div class="post-user-comments">
+                  <div id="post-comment-feature">
+                    <span id="post-comment-emoji" class="material-icons">sentiment_satisfied_alt</span>
+                    <span id="post-comment">Add a comment ...</span>
+                  </div>
+                  <button id="post-comment-publish">Post</button>
+                </div>
+              </div>
+            </li>
+
+            <li id="post-item">
+              <div class="post-cardview">
+                <div class="post-card-header">
+                  <label id="post-publisher">warshiptoto</label>
+                  <span class="material-icons"> more_horiz </span>
+                </div>
+                <div class="post-image-view">
+                  <img id="post-image" src="https://cdn.pixabay.com/photo/2022/03/01/09/15/salad-7040875_1280.jpg"
+                    alt="posted image" />
+                </div>
+                <div class="post-details">
+                  <div class="post-options">
+                    <div id="post-options-right">
+                      <span id="post-options-icon" class="material-icons">favorite_border</span>
+                      <span id="post-options-icon" class="material-icons">chat_bubble_outline</span>
+                      <span id="post-options-icon" class="material-icons">send</span>
+                    </div>
+
+                    <div id="post-options-left">
+                      <span class="material-icons">bookmark_border</span>
+                    </div>
+                  </div>
+
+                  <div class="post-likes">
+                    <label id="post-likes-count">31 likes</label>
+                  </div>
+
+                  <div class="post-caption">
+                    <span id="post-caption-username">cujo_diffusion</span>
+                    <span id="post-caption-text">Here is a caption on the photo.
+                    </span>
+                    <button id="post-caption-more"> more</button>
+                  </div>
+
+                  <div class="post-comments">
+                    <div id="post-comment-card">
+                      <span id="post-comment-username">dukegustair</span>
+                      <span id="post-comment-text">Here is a comment on the photo.
+                      </span>
+                    </div>
+
+                    <div id="post-comment-card">
+                      <span id="post-comment-username">innovationchichi</span>
+                      <span id="post-comment-text">Here is a comment on the photo.
+                      </span>
+                    </div>
+
+                    <div id="post-comment-date">
+                      <span id="post-comment-date-text">1 DAY AGO</span>
+                    </div>
+                  </div>
+                </div>
+                <div id="post-divider-line"></div>
+
+                <div class="post-user-comments">
+                  <div id="post-comment-feature">
+                    <span id="post-comment-emoji" class="material-icons">sentiment_satisfied_alt</span>
+                    <span id="post-comment">Add a comment ...</span>
+                  </div>
+                  <button id="post-comment-publish">Post</button>
+                </div>
+              </div>
+            </li>
+
+            <li id="post-item">
+              <div class="post-cardview">
+                <div class="post-card-header">
+                  <label id="post-publisher">valintotopbottom</label>
+                  <span class="material-icons"> more_horiz </span>
+                </div>
+                <div class="post-image-view">
+                  <img id="post-image" src="https://cdn.pixabay.com/photo/2022/03/23/18/56/beach-7087722_1280.jpg"
+                    alt="posted image" />
+                </div>
+                <div class="post-details">
+                  <div class="post-options">
+                    <div id="post-options-right">
+                      <span id="post-options-icon" class="material-icons">favorite_border</span>
+                      <span id="post-options-icon" class="material-icons">chat_bubble_outline</span>
+                      <span id="post-options-icon" class="material-icons">send</span>
+                    </div>
+
+                    <div id="post-options-left">
+                      <span class="material-icons">bookmark_border</span>
+                    </div>
+                  </div>
+
+                  <div class="post-likes">
+                    <label id="post-likes-count">31 likes</label>
+                  </div>
+
+                  <div class="post-caption">
+                    <span id="post-caption-username">valintotopbottom</span>
+                    <span id="post-caption-text">Here is a caption on the photo.
+                    </span>
+                    <button id="post-caption-more"> more</button>
+                  </div>
+
+                  <div class="post-comments">
+                    <div id="post-comment-card">
+                      <span id="post-comment-username">enohporcim</span>
+                      <span id="post-comment-text">Here is a comment on the photo.
+                      </span>
+                    </div>
+
+                    <div id="post-comment-card">
+                      <span id="post-comment-username">44.foup</span>
+                      <span id="post-comment-text">Here is a comment on the photo.
+                      </span>
+                    </div>
+
+                    <div id="post-comment-date">
+                      <span id="post-comment-date-text">1 DAY AGO</span>
+                    </div>
+                  </div>
+                </div>
+                <div id="post-divider-line"></div>
+
+                <div class="post-user-comments">
+                  <div id="post-comment-feature">
+                    <span id="post-comment-emoji" class="material-icons">sentiment_satisfied_alt</span>
+                    <span id="post-comment">Add a comment ...</span>
+                  </div>
+                  <button id="post-comment-publish">Post</button>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
+      </div>
+
+      <div class="right-column">
+        <div class="user-info">
+          <img id="user-profile-pic" src="https://picsum.photos/id/312/200" alt="user picture" />
+          <label class="user-info-username"> gojoSatoru </label>
+        </div>
+
+        <div class="user-suggestions">
+          <span id="suggestions-title"> Suggestions for you </span>
+          <div class="user-suggestions-panel">
+            <ul class="user-suggestions-list">
+              <li id="user-suggestion-item">
+                <div class="suggested-user-panel">
+                  <img id="user-profile-pic" src="https://picsum.photos/id/522/200" alt="suggested user picture" />
+                  <div id="suggested-user">
+                    <span id="suggested-username">amandahudson</span>
+                    <span id="suggested-user-label">suggested for you</span>
+                  </div>
+                  <button id="follow-suggested-user">follow</button>
+                </div>
+              </li>
+
+              <li id="user-suggestion-item">
+                <div class="suggested-user-panel">
+                  <img id="user-profile-pic" src="https://picsum.photos/id/721/200" alt="suggested user picture" />
+                  <div id="suggested-user">
+                    <span id="suggested-username">spotnelson</span>
+                    <span id="suggested-user-label">suggested for you</span>
+                  </div>
+                  <button id="follow-suggested-user">follow</button>
+                </div>
+              </li>
+
+              <li id="user-suggestion-item">
+                <div class="suggested-user-panel">
+                  <img id="user-profile-pic" src="https://picsum.photos/id/994/200" alt="suggested user picture" />
+                  <div id="suggested-user">
+                    <span id="suggested-username">lauraapollo</span>
+                    <span id="suggested-user-label">suggested for you</span>
+                  </div>
+                  <button id="follow-suggested-user">follow</button>
+                </div>
+              </li>
+
+              <li id="user-suggestion-item">
+                <div class="suggested-user-panel">
+                  <img id="user-profile-pic" src="https://picsum.photos/id/458/200" alt="suggested user picture" />
+                  <div id="suggested-user">
+                    <span id="suggested-username">netsirk</span>
+                    <span id="suggested-user-label">suggested for you</span>
+                  </div>
+                  <button id="follow-suggested-user">follow</button>
+                </div>
+              </li>
+
+              <li id="user-suggestion-item">
+                <div class="suggested-user-panel">
+                  <img id="user-profile-pic" src="https://picsum.photos/id/643/200" alt="suggested user picture" />
+                  <div id="suggested-user">
+                    <span id="suggested-username">andythron</span>
+                    <span id="suggested-user-label">suggested for you</span>
+                  </div>
+                  <button id="follow-suggested-user">follow</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
+  </main>
 </body>
 
 </html>
