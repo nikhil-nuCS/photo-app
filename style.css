@@ -35,11 +35,11 @@ a {
 }
 
 .top-nav-bar .top-nav-container {
-  width: 75%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 15px;
+  padding-left: 10px;
 }
 
 .top-nav-container #top-nav-bar-title {
@@ -76,7 +76,7 @@ a {
 .page-content {
   position: relative;
   margin-top: 100px;
-  width: 65%;
+  width: 80%;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -307,10 +307,10 @@ a {
 }
 
 #post-comment-date #post-comment-date-text {
-  font-weight: 600;
+  font-weight: 800;
   font-family: Assistant;
   font-size: 12pt;
-  color: #3B5794;
+  color: #6C6C68;
   /* opacity: 0.9; */
 }
 
