@@ -22,7 +22,8 @@ class PostListEndpoint(Resource):
         # 2. limit is hard coded (versus coming from the query parameter)
         # 3. No error checking
         # print(self.current_user)
-        data = Post.query.limit(request_params.get('limit')).all()
+        data = Post.query.filter_by(user_id=self.current_user.id).limit(request_params.get('limit')).all()
+        # data = Post.query.limit(request_params.get('limit')).all()
 
         data = [
             item.to_dict() for item in data
