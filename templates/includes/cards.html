@@ -35,22 +35,34 @@
             <label id="post-caption-more"><a href="/"> more</a></label>
           </div>
 
-          <div class="post-comments">
-            {% if eachPost.get('comments')|length > 1 %}
-              {% for eachComment in eachPost.get('comments') %}
-                <div id="post-comment-card">
-                  <span id="post-comment-username">{{ eachComment.get('user').get('username') }}</span>
-                  <span id="post-comment-text">{{ eachComment.get('text') }}
-                  </span>
-                </div>
-              {% endfor %}
-            {% endif %}
+          {% set comments = eachPost.get('comments') %}
+          {% set comments_count = comments|length %}
+          {% if comments_count > 1 %}
+            {% set display_comment = True %}
+            <div class="view-comments">
+              <button id="view-all-post-comments">View all {{ comments_count }} comments</button>
+            </div>
+          {% endif %}
+
+          {% if display_comment %}
+            <ul class="post-comment-list">           
+                <li id = "post-comment-item">
+                  <div class="post-comments">
+                    <div id="post-comment-card">
+                      <span id="post-comment-username">{{ comments[0].get('user').get('username') }}</span>
+                      <span id="post-comment-text">{{ comments[0].get('text') }}
+                      </span>
+                    </div>
+                  </div>    
+              </li>
+            </ul>
+          {% endif %}
 
             <div id="post-comment-date">
               <span id="post-comment-date-text">{{ eachPost.get('display_time') }}</span>
-            </div>
-          </div>
+            </div>        
         </div>
+        
         <div id="post-divider-line"></div>
 
         <div class="post-user-comments">

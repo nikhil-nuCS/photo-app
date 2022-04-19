@@ -1,34 +1,37 @@
 <!doctype html>
 <html>
 <head>
-    <title>Starter Template</title>
+    <meta charset="UTF-8" />
+    <title>Photo App</title>
     <link rel="stylesheet" href="/static/starter_styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa|Lato|Assistant|Noto Sans" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
 </head>
 <body>
-    <h1>Starter Template</h1>
+    <header>
+        {% with user=user %}
+            {% include "includes/navbar.html" %}
+        {% endwith %}
+    </header>
+    <main>
+        <div class="page-content">
+            <div class="left-column">
+                {% with stories=stories %}
+                    {% include "includes/stories.html" %}
+                {% endwith %}
 
-    <h2>1. Current User: {{ user.get('username') }}</h2>
-    <pre>{{ user }}</pre>
+                {% with posts = posts %}
+                    {% include "includes/cards.html" %}
+                {% endwith %}
+            </div>
 
-    <h2>2. Suggestions</h2>
-    <p><strong>First Suggestion:</strong> {{ suggestions[0].get('username') }}</p>
-    <pre>{{ suggestions }}</pre>
-
-    <h2>3. Stories</h2>
-    <p><strong>Title of first story:</strong> {{ stories[0].get('title') }}</p>
-    <pre>{{ stories }}</pre>
-
-    <h2>4. Posts</h2>
-    <p><strong>Image from first post:</strong></p>
-    <img src=" {{ posts[0].get('image_url') }}" />
-    <p>
-        <strong>First comment from first post:</strong>
-        {% if posts[0].comments|length > 0 %}
-            {{ posts[0].comments[0].text }}
-        {% else %}
-            The first post doesn't have a comment.
-        {% endif %}
-    </p>
-    <pre>{{ posts }}</pre>
+            <div class="right-column">
+                {% with user=user, suggestions=suggestions %}
+                    {% include "includes/suggestions.html" %}
+                {% endwith %}
+            </div>
+    </main>    
 </body>
 </html>
