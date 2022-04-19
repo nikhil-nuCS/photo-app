@@ -1,0 +1,67 @@
+<div class="post-panel">
+  <ul class="post-list">
+    {% for eachPost in posts %}
+    <li id="post-item">
+      <div class="post-cardview">
+        <div class="post-card-header">
+          <label id="post-publisher">{{ eachPost.get('user').get('username') }}</label>
+          <span class="material-icons" > more_horiz </span>
+        </div>
+        <div class="post-image-view">
+          <img id="post-image" src="{{ eachPost.get('image_url') }}"
+            alt="posted image" />
+        </div>
+        <div class="post-details">
+          <div class="post-options">
+            <div id="post-options-right">
+              <span id="post-options-icon" class="material-icons">favorite_border</span>
+              <span id="post-options-icon" class="material-icons">chat_bubble_outline</span>
+              <span id="post-options-icon" class="material-icons">send</span>
+            </div>
+
+            <div id="post-options-left">
+              <span class="material-icons">bookmark_border</span>
+            </div>
+          </div>
+
+          <div class="post-likes">
+            <label id="post-likes-count">{{ eachPost.get('likes') }} likes</label>
+          </div>
+
+          <div class="post-caption">
+            <span id="post-caption-username">{{ eachPost.get('user').get('username') }}</span>
+            <span id="post-caption-text">{{ eachPost.get('title') }}
+            </span>
+            <label id="post-caption-more"><a href="/"> more</a></label>
+          </div>
+
+          <div class="post-comments">
+            {% if eachPost.get('comments')|length > 1 %}
+              {% for eachComment in eachPost.get('comments') %}
+                <div id="post-comment-card">
+                  <span id="post-comment-username">{{ eachComment.get('user').get('username') }}</span>
+                  <span id="post-comment-text">{{ eachComment.get('text') }}
+                  </span>
+                </div>
+              {% endfor %}
+            {% endif %}
+
+            <div id="post-comment-date">
+              <span id="post-comment-date-text">{{ eachPost.get('display_time') }}</span>
+            </div>
+          </div>
+        </div>
+        <div id="post-divider-line"></div>
+
+        <div class="post-user-comments">
+          <div id="post-comment-feature">
+            <span id="post-comment-emoji" class="material-icons">sentiment_satisfied_alt</span>
+            <input id="post-comment" type="text" placeholder="Add a comment ...">
+          </div>
+          <button id="post-comment-publish">Post</button>
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

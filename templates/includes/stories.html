@@ -1,0 +1,16 @@
+<div id="stories-panel">
+  <ul id="stories-panel-content">
+    {% for eachStory in stories %}
+      <li class="stories-panel-item">
+        <div class="stories-panel-card">
+          <div id="stories-panel-image-background">
+            <div id="stories-panel-card-image">
+              <img class="stories-panel-image" src="{{ eachStory.get('user').get('profile_url') }}" alt="stories picture" />
+            </div>
+          </div>
+          <label class="stories-panel-card-label">{{ eachStory.get('user').get('username') }}</label>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
