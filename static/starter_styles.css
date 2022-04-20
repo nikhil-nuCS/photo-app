@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: whitesmoke;
+  background-color: #F3F4F3;
 }
 
 main {
@@ -96,13 +96,13 @@ a {
   flex-direction: column;
   position: sticky;
   top: 10%;
-  width: 43%;
+  width: 33%;
 }
 
 #stories-panel {
   display: flex;
   align-items: flex-start;
-  width: 70%;
+  width: 75%;
   border: 1px solid gray;
   background-color: white;
   border-radius: 10px;
@@ -114,7 +114,7 @@ a {
 .post-panel {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 75%;
 }
 
 
@@ -196,7 +196,7 @@ a {
 }
 
 .post-list #post-item {
-  margin-bottom: 2%;
+  margin-bottom: 8%;
 }
 
 .post-cardview {

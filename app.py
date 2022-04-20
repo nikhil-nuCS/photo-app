@@ -12,7 +12,7 @@ def home():
         user=current_user,
         posts=fake_data.generate_posts(n=8),
         stories=fake_data.generate_stories(n=7),
-        suggestions=fake_data.generate_suggestions(n=6)
+        suggestions=fake_data.generate_suggestions(n=7)
     )
 
 #####################################
