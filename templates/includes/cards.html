@@ -9,7 +9,7 @@
         </div>
         <div class="post-image-view">
           <img id="post-image" src="{{ eachPost.get('image_url') }}"
-            alt="posted image" />
+            alt="post-{{ eachPost.get('user').get('username') }}" />
         </div>
         <div class="post-details">
           <div class="post-options">
@@ -32,7 +32,7 @@
             <span id="post-caption-username">{{ eachPost.get('user').get('username') }}</span>
             <span id="post-caption-text">{{ eachPost.get('title') }}
             </span>
-            <label id="post-caption-more"><a href="/"> more</a></label>
+            <label id="post-caption-more"><a href=""> more</a></label>
           </div>
 
           {% set comments = eachPost.get('comments') %}

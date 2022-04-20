@@ -5,7 +5,9 @@
         <div class="stories-panel-card">
           <div id="stories-panel-image-background">
             <div id="stories-panel-card-image">
-              <img class="stories-panel-image" src="{{ eachStory.get('user').get('profile_url') }}" alt="stories picture" />
+              <img class="stories-panel-image" 
+              src="{{ eachStory.get('user').get('profile_url') }}" 
+              alt="story-{{eachStory.get('user').get('username')}}" />
             </div>
           </div>
           <label class="stories-panel-card-label">{{ eachStory.get('user').get('username') }}</label>
