@@ -436,6 +436,17 @@ a {
   align-items: center;
 }
 
+.suggested-user-panel #user-suggestion-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 85%;
+}
+
+.suggested-user-panel #user-suggestion-right {
+  width: 15%;
+}
+
 .suggested-user-panel #user-profile-pic {
   width: 62px;
   height: 62px;
@@ -553,7 +564,7 @@ a {
   }
 
   .left-column {
-    width: 95%;
+    width: 90%;
   }
 
   #stories-panel {
@@ -566,6 +577,13 @@ a {
     overflow: auto;
     margin-bottom: 4%;
   }
+
+  .post-panel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
   .page-content .right-column {
     display: none;
   }
@@ -612,7 +630,7 @@ a {
 
   .stories-panel-card-label {
     margin-top: 8px;
-    font-size: 9pt;
+    font-size: 10pt;
     font-family: Assistant;
     font-weight: 600;
   }
