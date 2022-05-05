@@ -5,6 +5,8 @@ from flask_restful import Api
 from flask_cors import CORS
 from flask import render_template
 import os
+import requests
+import json
 from sqlalchemy import and_
 from models import db, Post, User, Following, ApiNavigator, Story
 from views import initialize_routes, get_authorized_user_ids
@@ -30,11 +32,26 @@ initialize_routes(api)
 
 # Server-side template for the homepage:
 @app.route('/')
-def home():
-    return '''
-       <p>View <a href="/api">REST API Tester</a>.</p>
-       <p>Feel free to replace this code from HW2</p>
-    '''
+def home():    
+    post_api_url = request.url_root + "api/posts"
+    stories_api_url = request.url + "api/stories"
+    suggestion_api_url = request.url_root + "api/suggestions"
+
+    posts = json.loads(requests.get(post_api_url).text)
+    stories = json.loads(requests.get(stories_api_url).text)
+    suggestions = json.loads(requests.get(suggestion_api_url).text)
+    curr_user = app.current_user.to_dict()
+    return render_template(
+        'starter_template.html',
+        user=curr_user,
+        posts=posts,
+        stories=stories,
+        suggestions=suggestions
+    )
+    # return '''
+    #    <p>View  <a href="/api">REST API Tester</a>.</p>
+    #    <p>Feel free to replace this code from HW2</p>
+    # '''
 
 
 @app.route('/api')
