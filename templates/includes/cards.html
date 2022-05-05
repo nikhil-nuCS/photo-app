@@ -25,12 +25,12 @@
           </div>
 
           <div class="post-likes">
-            <label id="post-likes-count">{{ eachPost.get('likes') }} likes</label>
+            <label id="post-likes-count">{{ eachPost.get('likes')|length }} likes</label>
           </div>
 
           <div class="post-caption">
             <span id="post-caption-username">{{ eachPost.get('user').get('username') }}</span>
-            <span id="post-caption-text">{{ eachPost.get('title') }}
+            <span id="post-caption-text">{{ eachPost.get('caption') }}
             </span>
             <label id="post-caption-more"><a href=""> more</a></label>
           </div>

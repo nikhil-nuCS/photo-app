@@ -103,9 +103,9 @@ a {
   display: flex;
   align-items: flex-start;
   width: 75%;
-  border: 1px solid gray;
+  border: 2px solid gray;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 20px 0px;
   overflow: auto;
   margin-bottom: 2%;
@@ -129,8 +129,8 @@ a {
 }
 
 ::-webkit-scrollbar {
-  width: 0; /* Remove scrollbar space */
-  background-color: transparent;
+  width: 2; /* Remove scrollbar space */
+  /* background-color: transparent; */
 }
 
 .stories-panel-card-item {

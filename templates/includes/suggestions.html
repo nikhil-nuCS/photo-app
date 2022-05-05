@@ -1,7 +1,7 @@
 <div class="user-info">
   <img
     id="user-profile-pic"
-    src="{{ user.get('profile_url') }}"
+    src="{{ user.get('image_url') }}"
     alt="user picture"
   />
   <label class="user-info-username"> {{ user.get('username') }} </label>
@@ -17,7 +17,7 @@
           <div id="user-suggestion-left">
             <img
               id="user-profile-pic"
-              src="{{ eachSuggestion.get('profile_url') }}"
+              src="{{ eachSuggestion.get('image_url') }}"
               alt="suggested-{{ eachSuggestion.get('username') }}"
             />
             <div id="suggested-user">

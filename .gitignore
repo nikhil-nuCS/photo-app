@@ -3,5 +3,6 @@
 bin
 lib
 Scripts
+.env
 env
 venv
