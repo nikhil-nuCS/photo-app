@@ -4,6 +4,7 @@ from flask import Flask, request
 from flask_restful import Api
 from flask_cors import CORS
 from flask import render_template
+from tests import utils
 import os
 import requests
 import json
@@ -33,13 +34,13 @@ initialize_routes(api)
 # Server-side template for the homepage:
 @app.route('/')
 def home():    
-    post_api_url = request.url_root + "api/posts"
-    stories_api_url = request.url + "api/stories"
-    suggestion_api_url = request.url_root + "api/suggestions"
+    post_api_url = utils.root_url + "/api/posts"
+    stories_api_url = utils.root_url + "/api/stories"
+    suggestion_api_url = utils.root_url + "/api/suggestions"
 
-    posts = json.loads(requests.get(post_api_url).text)
-    stories = json.loads(requests.get(stories_api_url).text)
-    suggestions = json.loads(requests.get(suggestion_api_url).text)
+    posts = requests.get(post_api_url).json()
+    stories = requests.get(stories_api_url).json()
+    suggestions = requests.get(suggestion_api_url).json()
     curr_user = app.current_user.to_dict()
     return render_template(
         'starter_template.html',
