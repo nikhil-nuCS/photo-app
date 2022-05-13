@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Photo App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- client-side CSS -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" /> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="/static/css/client-home.css" />
+    <link rel="stylesheet" href="/static/css/modal-comment.css" />
+    <link rel="stylesheet" href="/static/css/stories.css" />
+    <link rel="stylesheet" href="/static/css/posts.css" />
+    <link rel="stylesheet" href="/static/css/profile.css" />
+    <link rel="stylesheet" href="/static/css/suggestions.css" />
+
+
+    <!-- client-side scripts -->
+    <script lang="text/javascript" src="/static/js/stories.js" defer></script>
+    <script lang="text/javascript" src="/static/js/posts.js" defer></script>
+    <script lang="text/javascript" src="/static/js/profile.js" defer></script>
+    <script lang="text/javascript" src="/static/js/suggestions.js" defer></script>
+    <script lang="text/javascript" src="/static/js/hw04.js" defer></script>
+    <script lang="text/javascript" src="/static/js/modal-comment.js" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <!-- Nav Bar still rendered via server-side template -->
+        {% include 'includes/navbar.html' %}
+    </header>
+    <main>
+        <div class="page-content">
+            <div class="left-column">
+                <div class="stories">
+                    <!-- stories rendered client-side -->
+                    <p>Loading Stories... </p>
+                </div>
+
+                <div class="posts">
+                    <!-- Posts rendered client-side -->
+                    <p>Loading Posts.. </p>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="user-profile">
+                    <!-- user profile rendered client-side -->
+                    <p>Loading User Profile.. </p>
+                </div>
+                <div class="suggestions">
+                    <p class="suggestion-text">Loading Suggestions ... </p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

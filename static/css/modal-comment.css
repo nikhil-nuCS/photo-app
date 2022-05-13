@@ -1,0 +1,119 @@
+.modal-bg {
+  background: rgba(50, 50, 50, 0.8);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-view {
+  width: 80%;
+  height: auto;
+  max-height: 80%;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+#modal-close {
+  margin: 20px;
+  align-self: flex-end;
+  color: white;
+}
+
+.modal-left {
+  width: 65%;
+  height: auto;
+  margin-right: 10px;
+}
+
+.modal-right {
+  width: 35%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+#modal-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.modal-user {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#modal-comment-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+#modal-list-item-comment {
+  display: flex;
+  flex-direction: column;
+}
+
+#modal-comment-userimage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+#post-divider-line {
+  margin-top: 10px;
+  border-bottom: 2px solid gray;
+  margin-bottom: 10px;
+}
+
+
+#modal-userimage {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+#modal-comment-left {
+  display: flex;
+  flex-direction: row;
+}
+
+#modal-comment-like {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: 15px;
+
+}
+.modal-comment-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#modal-comment-card {
+  display: flex;
+  flex-direction: row;
+}
+
+.hidden {
+  display: none !important;
+}

@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Assistant&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: Noto Sans;
+    /* background-color: #fafafa; */
+    background-color: #f2f2f2;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-bar {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    z-index: 100000;
+    width: 100%;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-bottom: 3px solid gray;
+}
+
+nav>div>ul {
+    display: flex;
+}
+
+nav>div>ul>li {
+    margin-left: 10px;
+}
+
+ul {
+    list-style: none;
+}
+
+nav>.nav-container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.nav-container>#nav-title {
+    display: inline-block;
+    font-family: Comfortaa;
+    font-weight: bold;
+    font-size: 20pt;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Comfortaa", cursive;
+}
+
+.page-content {
+    position: relative;
+    margin-top: 100px;
+    width: 80%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+}
+
+.left-column {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 10%;
+    width: 33%;
+}
+
+@media only screen and (max-width: 600px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #f2f2f2;
+    }
+
+    main {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-bar .nav-container {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-container #nav-title {
+        font-family: Comfortaa;
+        font-weight: bold;
+        font-size: 15pt;
+    }
+
+    nav > div > ul > li {
+        margin-left: 5px;
+        margin-right: 10px;
+        font-size: 10pt;
+        font-family: Lato;
+        font-weight: 600;
+    }
+    
+    .page-content {
+        margin-top: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .left-column {
+        width: 90%;
+    }
+}
+
+a,
+a:visited,
+a:hover,
+a:link {
+    /* font-weight: 600; */
+    /* text-decoration: none; */
+    color: rgb(44, 105, 155);
+    font-family: Lato;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #777;
+}
+
+button.link {
+    color: rgb(44, 105, 155);
+    background-color: transparent;
+    border-width: 0px;
+}
+
+button.link:hover {
+    color: #777;
+}
+
+button.link.following {
+    padding: 5px 10px !important;
+}
+
+button.link.following.active {
+    background-color: white;
+    padding: 5px 10px !important;
+    border: solid 1px #ccc;
+    border-radius: 4px;
+}
+
+.material-icons {
+    font-family: "Material Icons";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 25px; /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    background: none;
+    
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: "liga";
+  }
+  
