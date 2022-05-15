@@ -46,9 +46,9 @@ const postComments2Html = (comments,postID) => {
   str = "";
   if (comments.length > 1) {
     str += `
-        <label id="view-all-comments" 
+        <button id="view-all-comments" 
         data-postid="${postID}"
-        onclick="showAllComments(event)">View all ${comments.length} comments</label> 
+        onclick="showAllComments(event)">View all ${comments.length} comments</button> 
         <div id="post-comment-card">
           <span id="comment-username">${comments.at(-1).user.username}</span>
           <span id="comment-text">${comments.at(-1).text}</span>
@@ -140,69 +140,11 @@ function setupLikeROptionPostUI(postDetails) {
   return rightOptionsHTML;
 }
 
-
-function configureLikedPost(eventTarget) {
-  console.log(eventTarget)
-  var icon;
-  if (eventTarget !== undefined) {
-    icon = eventTarget.target;
-
-  } else {
-    icon = document.querySelector("#card-noliked");
-  }
-  icon.setAttribute("id", "card-liked")
-  icon.classList = ""
-  icon.classList.add("material-icons", "post-liked")
-  icon.innerHTML = "favorite";
-  icon.style.color = "red";
-  icon.setAttribute("aria-checked", "true")
-}
-
-function configureNotLikedPost(eventTarget) {
-  var icon = document.querySelector("#card-liked");
-  if (eventTarget !== undefined) {
-    icon = eventTarget.target;
-  }
-  icon.setAttribute("id", "card-noliked")
-  icon.classList = ""
-  icon.classList.add("material-icons")
-  icon.innerHTML = "favorite_border";
-  icon.style.removeProperty("color");
-  icon.setAttribute("aria-checked", "false")
-}
-
-function configurePostBookmark(eventTarget) {
-  var icon = document.querySelector("#card-unbookmarked")
-  if (eventTarget !== undefined) {
-    icon = eventTarget.target;
-  }
-  icon.id = "card-bookmarked"
-  icon.classList = ""
-  icon.classList.add("material-icons", "post-bookmarked")
-  icon.innerHTML = "bookmark";
-  icon.style.color = "black";
-  icon.setAttribute("aria-checked", "true");
-}
-
-function configureNoBookmark(eventTarget) {
-  var icon = document.querySelector("#card-bookmarked")
-  if (eventTarget !== undefined) {
-    icon = eventTarget.target;
-  }
-  icon.id = "card-unbookmarked"
-  icon.innerHTML = "bookmark_border";
-  icon.style.removeProperty("color");
-  icon.setAttribute("aria-checked", "false");
-}
-
 function handlePostLike(ev) {
   if (ev.currentTarget.getAttribute("aria-checked") === "true") {
-    console.log("User action : Like Post -> Unlike Post");
     deleteLikeOnPost(ev);
   } else {
-    console.log("User action : Unlike Post -> Like Post");
     addLikeOnPost(ev);
-    // reloadThePost(ev)
   }
 }
 
@@ -213,12 +155,30 @@ function showAllComments(ev) {
 
 function handlePostBookmark(ev) {
   if (ev.currentTarget.getAttribute("aria-checked") === "true") {
-    console.log("User action : Bookmarked -> Remove Bookmark");
     deleteBookmarkOnPost(ev);
   } else {
-    console.log("User action : Add to Bookmarks");
     addBookmarkOnPost(ev)
   }
+}
+
+async function reloadThePost(postDetails, completionHandler) {
+  var postid = postDetails.target.dataset.postid
+  fetch(`api/posts/${postid}`, {
+    method: "GET",
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  })
+    .then(response => response.json())
+    .then(data => {
+      var post2Html = postItem2Html(data)
+      var element = document.getElementById(`card-id-${postid}`)
+      element.replaceWith(createHTMLElement(post2Html));
+      if (completionHandler) {
+        completionHandler()
+      }
+    });
+
 }
 
 function addLikeOnPost(postDetails) {
@@ -236,26 +196,12 @@ function addLikeOnPost(postDetails) {
   })
     .then(response => response.json())
     .then(data => {
-      reloadThePost(postDetails)
+      console.log("Liking a Post ::=", data);
+      reloadThePost(postDetails, () => {
+        const elem = document.querySelector(`#card-id-${postDetails.target.dataset.postid}`);
+        elem.querySelector('#card-liked').focus();
+      });
     });
-}
-
-function reloadThePost(postDetails) {
-  var postid = postDetails.target.dataset.postid
-  fetch(`api/posts/${postid}`, {
-    method: "GET",
-    headers: {
-      'Content-Type': 'application/json',
-    }
-  })
-    .then(response => response.json())
-    .then(data => {
-      console.log(data);
-      var post2Html = postItem2Html(data)
-      var element = document.getElementById(`card-id-${postid}`)
-      element.replaceWith(createHTMLElement(post2Html));
-    });
-
 }
 
 function deleteLikeOnPost(postDetails) {
@@ -268,9 +214,11 @@ function deleteLikeOnPost(postDetails) {
   })
     .then(response => response.json())
     .then(data => {
-      console.log(data);
-      configureNotLikedPost(postDetails);
-      reloadThePost(postDetails)
+      console.log("Liked -> Unlike Post :==", data);
+      reloadThePost(postDetails, () => {
+        const elem = document.querySelector(`#card-id-${postDetails.target.dataset.postid}`);
+        elem.querySelector("#card-noliked").focus();
+      });
     });
 }
 
@@ -290,7 +238,11 @@ function addBookmarkOnPost(postDetails) {
   })
     .then(response => response.json())
     .then(data => {
-      reloadThePost(postDetails)
+      console.log("Adding a bookmark ::=", data);
+      reloadThePost(postDetails, () => {
+        const elem = document.querySelector(`#card-id-${postID}`);
+        elem.querySelector("#card-bookmarked").focus();
+      });
     });
 }
 
@@ -304,14 +256,17 @@ function deleteBookmarkOnPost(postDetails) {
   })
     .then(response => response.json())
     .then(data => {
-      reloadThePost(postDetails)
+      console.log("Deleting bookmark ::=", data);
+      reloadThePost(postDetails, () => {
+        const elem = document.querySelector(`#card-id-${postDetails.target.dataset.postid}`);
+        elem.querySelector("#card-unbookmarked").focus();
+      });
     });
 }
 
 function handlePostingComment(event) {
   var postid = event.currentTarget.dataset.postid;
   var inputComment = document.getElementById(`post-comment-${postid}`).value;
-  console.log(inputComment)
   const bodyData = {
     "post_id": postid,
     "text": inputComment
@@ -326,9 +281,15 @@ function handlePostingComment(event) {
   })
     .then(response => response.json())
     .then(data => {
-      console.log(data);
-      reloadThePost(event)
-    });
+      console.log("Adding a comment ::=", data);
+      reloadThePost(event, () => {
+        const elem = document.querySelector(`#card-id-${postid}`);
+        elem.querySelector(".post-comment").focus();
+      });
+    })
+    .catch((error) => {
+      console.error("Error in posting comment ::=", error);
+    }); 
 }
 
 
@@ -345,6 +306,6 @@ const displayPosts = () => {
 };
 
 
-// window.addEventListener("load", function () {
-//   displayPosts();
-// });
+window.addEventListener("load", function () {
+  displayPosts();
+});

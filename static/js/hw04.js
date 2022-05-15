@@ -4,10 +4,10 @@ function createHTMLElement(withHtml) {
     return tempElement.firstElementChild
 }
 
-window.addEventListener("load", function () {
-    displayPosts();
-    displayProfile();
-    displayStories();
-    displaySuggestions();
-  });
+// window.addEventListener("load", function () {
+//     displayPosts();
+//     displayProfile();
+//     displayStories();
+//     displaySuggestions();
+//   });
   

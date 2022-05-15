@@ -62,13 +62,11 @@ const createFollowRequest = (toUserId, element) => {
       element.classList.add("user-unfollow");
       element.setAttribute("data-entryID",data.id)
       element.setAttribute("aria-checked","true")
-
     });
 }
 
 const createUnfollowRequest = element => {
   var deleteURL = `api/following/${element.dataset.entryid}`;
-  console.log(deleteURL);
   fetch(deleteURL, {
     method: "DELETE",
     headers: {
@@ -87,9 +85,9 @@ const createUnfollowRequest = element => {
 
 }
 
-// window.addEventListener("load", function () {
-//   displaySuggestions()
-// });
+window.addEventListener("load", function () {
+  displaySuggestions()
+});
 
 function handleToggleFollow(ev) {
   var element = ev.currentTarget;

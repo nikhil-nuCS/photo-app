@@ -99,10 +99,14 @@
   margin-bottom: 5px;
   font-family: Assistant;
   font-size: 12pt;
+  width: fit-content;
   font-weight: 700;
   color: #23406e;
-  padding: 0;
+  border: none;
   cursor: pointer;
+  padding: 0;
+  background: none;
+  text-align: left;
 }
 
 .comment-list #comment-item {

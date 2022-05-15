@@ -26,6 +26,6 @@ const displayStories = () => {
         })
 };
 
-// window.addEventListener("load", function(){
-//     displayStories()
-//   });
+window.addEventListener("load", function(){
+    displayStories()
+  });

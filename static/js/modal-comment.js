@@ -1,11 +1,15 @@
+var activePostID = 0;
+
 function comments2Modal(post) {
   var innerhtml = `
   <div class="modal-bg hidden" aria-hidden="true" role="dialog">
+  <div class="modal-content">
     <button class="material-icons"
     id="modal-close"
+    data-postid = "${post.id}"
     aria-label="Close the modal window" 
-    onclick="closeModal(event);">close</button>
-    <section class="modal-view">
+    onclick="dismissModal(event);">close</button>
+    <section class="all-comments-view">
       <div class="modal-left">
           <img id="modal-image" src="${post.image_url}" alt="image by sheena_johnson">                
       </div>
@@ -14,12 +18,13 @@ function comments2Modal(post) {
             <img id="modal-userimage" src="${post.user.thumb_url}" alt="image by ${post.user.username}">                
             <label id="modal-username">${post.user.username}</label>                
         </div> 
-        <div id="post-divider-line"></div>
+        <div id="modal-divider-line"></div>
         <div class="modal-comments">
           <ul class="modal-comment-list">${allCommentsHtml(post.comments)}</ul>
         </div>               
       </div>
     </section>
+    </div>
   </div>
   `;
   return innerhtml;
@@ -46,27 +51,49 @@ function comment2ListHtml(comment) {
   return listItemHtml
 }
 
-function closeModal(event) {
+function closeModal(postid) {
   var modalElement = document.querySelector(".modal-bg");
-  document.body.removeChild(modalElement);
-  // modalElement.classList.add("hidden");
-  // modalElement.setAttribute("aria-hidden", "false");
+  modalElement.classList.add("hidden");
+  modalElement.setAttribute("aria-hidden", "true");
   document.body.style.overflowY = "";
+  var focusElement = document.querySelector(`#card-id-${postid}`);
+  focusElement.querySelector("#view-all-comments").focus();
+  document.removeEventListener("keyup", keyPressed);
+}
+
+function dismissModal(event) {
+  closeModal(event.target.dataset.postid)
+}
+
+const keyPressed = keyEvent => {
+  var keyID = keyEvent.which || keyEvent.keyCode;
+  if(keyID == 27) {
+    closeModal(activePostID)
+  }
 }
 
 // fetch data from your API endpoint:
 const displayAllComments = postid => {
+  document.addEventListener("keyup", keyPressed);
   fetch(`/api/posts/${postid}`)
     .then((response) => response.json())
     .then((post) => {
       const postListHtml = comments2Modal(post)
       var element = createHTMLElement(postListHtml)
-      document.body.appendChild(element);
-      var modalElement = document.querySelector(".modal-bg");
-      modalElement.classList.remove("hidden")
-      modalElement.setAttribute("aria-hidden", "false");
+      
+      if(document.getElementsByClassName("modal-bg hidden")[0]) {
+        var existingComments = document.querySelectorAll(".modal-bg.hidden")[0];
+        existingComments.replaceWith(element)
+        element.classList.remove("hidden")
+        element.setAttribute("aria-hidden", "false");
+      } else {
+        document.body.appendChild(element);
+        var modalElement = document.querySelector(".modal-bg");
+        modalElement.classList.remove("hidden")
+        modalElement.setAttribute("aria-hidden", "false");
+      }
+      activePostID = postid
       document.body.style.overflowY = "hidden";
       document.querySelector("#modal-close").focus();
-
     });
 };

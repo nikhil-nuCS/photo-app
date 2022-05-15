@@ -5,54 +5,84 @@
   left: 0px;
   width: 100%;
   height: 100%;
+}
+
+.modal-content {
+  position: relative;
+  margin-top: 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
-.modal-view {
+#modal-close {
+  margin: 0 60px;
+  align-self: flex-end;
+  color: white;
+  font-size: 27pt;
+}
+
+.all-comments-view {
   width: 80%;
-  height: auto;
-  max-height: 80%;
+  height: fit-content;
   background-color: white;
   border-radius: 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 20px;
-}
-
-#modal-close {
-  margin: 20px;
-  align-self: flex-end;
-  color: white;
 }
 
 .modal-left {
   width: 65%;
-  height: auto;
-  margin-right: 10px;
+  margin-right: 5px;
+  /* height: fit-content; */
 }
 
 .modal-right {
   width: 35%;
-  height: auto;
   display: flex;
+  height: 505px;
   flex-direction: column;
-  overflow: auto;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 #modal-image {
+  /* background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; */
   width: 100%;
   height: auto;
-  object-fit: cover;
+  border-radius: 5px 0 0 5px;
+  display: block;
+
 }
 
 .modal-user {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+}
+
+#modal-username {
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+#modal-divider-line {
+  margin-top: 10px;
+  border-bottom: 2px solid gray;
+}
+
+.modal-comments {
+  overflow: auto;
+}
+
+.modal-comment-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
 }
 
 #modal-comment-item {
@@ -62,7 +92,6 @@
   justify-content: space-between;
   margin-top: 10px;
   margin-right: 20px;
-  margin-left: 20px;
 }
 
 #modal-list-item-comment {
@@ -77,13 +106,6 @@
   margin-right: 15px;
 }
 
-#post-divider-line {
-  margin-top: 10px;
-  border-bottom: 2px solid gray;
-  margin-bottom: 10px;
-}
-
-
 #modal-userimage {
   width: 60px;
   height: 60px;
@@ -96,22 +118,22 @@
   flex-direction: row;
 }
 
+#comment-username {
+  font-weight: bold;
+  margin-right: 7px;
+}
+
+#lower-comment {
+  margin-top: 5px;
+  color: gray;
+}
+
 #modal-comment-like {
   width: 30px;
   height: 30px;
   border-radius: 50%;
   margin-left: 15px;
 
-}
-.modal-comment-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#modal-comment-card {
-  display: flex;
-  flex-direction: row;
 }
 
 .hidden {

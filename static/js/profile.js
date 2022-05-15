@@ -16,6 +16,6 @@ const displayProfile = () => {
         })
 };
 
-// window.addEventListener("load", function(){
-//     displayProfile()
-//   });
+window.addEventListener("load", function(){
+    displayProfile()
+  });
