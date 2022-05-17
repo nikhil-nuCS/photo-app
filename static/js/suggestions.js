@@ -85,9 +85,9 @@ const createUnfollowRequest = element => {
 
 }
 
-window.addEventListener("load", function () {
-  displaySuggestions()
-});
+// window.addEventListener("load", function () {
+//   displaySuggestions()
+// });
 
 function handleToggleFollow(ev) {
   var element = ev.currentTarget;
@@ -97,3 +97,5 @@ function handleToggleFollow(ev) {
     createUnfollowRequest(element)
   }
 }
+
+displaySuggestions()

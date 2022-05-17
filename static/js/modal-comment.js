@@ -20,7 +20,10 @@ function comments2Modal(post) {
         </div> 
         <div id="modal-divider-line"></div>
         <div class="modal-comments">
-          <ul class="modal-comment-list">${allCommentsHtml(post.comments)}</ul>
+          <ul class="modal-comment-list">
+            ${postCaption(post)}
+            ${allCommentsHtml(post.comments)}
+          </ul>
         </div>               
       </div>
     </section>
@@ -33,6 +36,23 @@ function comments2Modal(post) {
 function allCommentsHtml(comments) {
   var commentsHtml = comments.map(comment2ListHtml).join("\n");
   return commentsHtml;
+}
+
+function postCaption(postDetails) {
+  var captionHTML = 
+  `
+  <li id="modal-comment-item">
+  <div id="modal-comment-left">
+    <img id="modal-comment-userimage" src="${postDetails.user.thumb_url}" alt="profile pic of ${postDetails.user.username}"> 
+    <div id="modal-list-item-comment">  
+      <label id="comment-text"> <span id="comment-username">${postDetails.user.username}</span> ${postDetails.caption} </label>
+      <label id="lower-comment"> ${postDetails.display_time} </label>
+    </div>
+  </div>
+  <button class="material-icons" id="modal-comment-like">favorite_border</button>  
+</li>
+  `
+  return captionHTML;
 }
 
 function comment2ListHtml(comment) {

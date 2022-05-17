@@ -305,7 +305,8 @@ const displayPosts = () => {
     });
 };
 
+displayPosts()
 
-window.addEventListener("load", function () {
-  displayPosts();
-});
+// window.addEventListener("load", function () {
+//   displayPosts();
+// });
