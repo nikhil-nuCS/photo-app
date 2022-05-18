@@ -1,0 +1,25 @@
+PART - 1
+Q: Why, and to whom, is accessibility important?
+Ans: Everyone can perceive, explore, comprehend, and interact with online content with accessibility. Accessibility would allow individuals to participate and contribute actively on the internet. The accessible design makes it easier for people with and without disabilities to find information online. Web sites that are easily accessible speed up the distribution of information and allow a broader range of users independent of their specific needs to access it.
+
+Q: How might you make a site (or app) like Instagram more accessible?
+Ans: Some of the ways to make a site like Instagram more accessible are:
+	- Add alt-text to images - Currently, if the user does not add alt-text, Instagram does not add any alt-text to images currently.
+	- Provide subtitles on video content - By default, Instagram does not provide any subtitles/closed captions are provided on the video content, which	
+	- Using CamelCase in Hashtags - Hashtags placed in the comments are picked up by Instagram’s algorithms but not read by screen readers as part of your post. Therefore, using CamelCase in your hashtags improves readability and is much friendlier.
+	- Add support for more languages - It currently supports 31 languages, whereas services like YouTube support 91 languages. Supporting more languages enables people from diverse backgrounds to have the same experience as the rest.
+
+PART - 2
+Q: What resources did you consult as you implemented the accessibility features? Were there any that you found useful that aren’t on the Accessibility Resources page?
+Ans: I mostly followed the resources present on the Accessibility resource page. However, I did use colormind.io to help with theming to avoid contrast errors.
+
+
+PART - 3
+Q: Was it a lot of additional work?
+Ans: No. I reused the design framework from hw02 and built the functionality upon it following the single responsibility principle. The work was manageable. The HW had numerous small details to handle, but the instructions offered support and direction.
+
+Q: What was the most challenging part?
+Ans: I tried distributing the different responsibilities of loading the content on the web page to individual JavaScripts files. Unfortunately, these files were cached in the browser and would trigger 304 HTTP codes when reloaded at short intervals. Because of this, the page component would encounter the error and fail to load posts/stories/suggestions/profiles in random order. I had to read up a lot before zeroing down on the issue. Adding a no-cache policy via flask happens to fix the case but may require additional debugging in the future.
+
+Q: Do you think that designing for accessibility also improves the usability of the site for all users? Why or why not?
+Ans: Yes. I think accessibility improves the usability of the site for all users. It would positively impact how the entire audience interacts with the content. In addition, it adds to a website's testing methodology, which improves the overall browsing experience for all the users.
