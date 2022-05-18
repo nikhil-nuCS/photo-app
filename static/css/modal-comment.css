@@ -3,13 +3,15 @@
   position: fixed;
   top: 0px;
   left: 0px;
+  display: flex;
   width: 100%;
   height: 100%;
 }
 
 .modal-content {
   position: relative;
-  margin-top: 70px;
+  margin-top: 40px;
+  /* height: 70%; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,7 +26,8 @@
 
 .all-comments-view {
   width: 80%;
-  height: fit-content;
+  height: 75%;
+  /* height: fit-content; */
   background-color: white;
   border-radius: 5px;
   display: flex;
@@ -35,13 +38,13 @@
 .modal-left {
   width: 65%;
   margin-right: 5px;
-  /* height: fit-content; */
+  object-fit: contain;
 }
 
 .modal-right {
   width: 35%;
   display: flex;
-  height: 505px;
+  /* height: 505px; */
   flex-direction: column;
   margin-top: 20px;
   margin-left: 20px;
@@ -52,7 +55,7 @@
   background-size: cover;
   background-position: center center; */
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: 5px 0 0 5px;
   display: block;
 
@@ -65,8 +68,10 @@
 }
 
 #modal-username {
-  margin-left: 20px;
-  font-weight: bold;
+  margin-left: 15px;
+  font-family: Lato;
+  font-weight: 900;
+  font-size: 15pt;
 }
 
 #modal-divider-line {
@@ -75,6 +80,7 @@
 }
 
 .modal-comments {
+  height: 100%;
   overflow: auto;
 }
 
@@ -82,7 +88,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  overflow-y: auto;
+  /* overflow-y: auto; */
 }
 
 #modal-comment-item {
@@ -119,13 +125,24 @@
 }
 
 #comment-username {
-  font-weight: bold;
+  font-family: Lato;
+  font-weight: 800;
+  font-size: 12pt;
   margin-right: 7px;
 }
 
+#comment-text {
+  font-family: Assistant;
+  font-weight: 300;
+  font-size: 11pt;
+}
+
 #lower-comment {
+  font-family: Assistant;
+  font-size: 10pt;
+  font-weight: 500;
   margin-top: 5px;
-  color: gray;
+  color: #373740;
 }
 
 #modal-comment-like {

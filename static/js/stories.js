@@ -27,7 +27,3 @@ const displayStories = () => {
 };
 
 displayStories()
-
-// window.addEventListener("load", function(){
-//     displayStories()
-//   });

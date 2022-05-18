@@ -3,11 +3,3 @@ function createHTMLElement(withHtml) {
     tempElement.innerHTML = withHtml;
     return tempElement.firstElementChild
 }
-
-// window.addEventListener("load", function () {
-//     displayPosts();
-//     displayProfile();
-//     displayStories();
-//     displaySuggestions();
-//   });
-  

@@ -36,7 +36,7 @@
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  border: 3px solid #d59a75;
+  border: 3px solid #819F94;
 }
 
 .suggested-panel #suggested-user {
@@ -48,7 +48,7 @@
 
 #suggested-user #suggested-username {
   font-weight: 700;
-  font-family: Noto Sans;
+  font-family: Lato;
   font-size: 11pt;
 }
 
@@ -61,7 +61,7 @@
 }
 
 #suggestion-right > button {
-  font-family: Assistant;
+  font-family: Noto Sans;
   font-size: 12pt;
   font-weight: 700;
   color: #23406e;

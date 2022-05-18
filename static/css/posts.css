@@ -3,20 +3,20 @@
 }
 
 
-.posts>ul {
+.posts > ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-.posts>ul> .card-item {
+.posts > ul > .card-item {
   margin-bottom: 5%;
 }
 
 .cardview {
   display: flex;
   flex-direction: column;
-  border: solid 3px #dbdbdb;
+  border: solid 2px #4e5a5f;
   border-radius: 6pt;
   background-color: white;
 }
@@ -31,7 +31,7 @@
 
 .card-header #card-publisher {
   font-weight: 900;
-  font-family: Noto Sans;
+  font-family: Lato;
   font-size: 13pt;
 }
 
@@ -196,7 +196,7 @@
   border: none;
   padding: 0;
   background: none;
-  font-family: Assistant;
+  font-family: Noto Sans;
   font-size: 14pt;
   font-weight: 800;
   color: #23406e;

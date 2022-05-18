@@ -85,10 +85,6 @@ const createUnfollowRequest = element => {
 
 }
 
-// window.addEventListener("load", function () {
-//   displaySuggestions()
-// });
-
 function handleToggleFollow(ev) {
   var element = ev.currentTarget;
   if (element.getAttribute("aria-checked") === "false") {
