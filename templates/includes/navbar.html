@@ -1,16 +1,18 @@
 <nav class="nav-bar">
-  <div class="nav-container">
-    <h1 id="nav-title">Photo App</h1>
-    <ul id="nav-items">
-      <li>
-        {% if request.url_rule.endpoint == 'api_docs' %}
-        <a href="/">Home</a>
-        {% else %}
-        <a href="/api">API Docs</a>
-        {% endif %}
-      </li>
-      <li><span id="nav-username">{{ user.username }}</span></li>
-      <li id="app-logout"><a href="#">Sign out</a></li>
-    </ul>
-  </div>
+    <div class="nav-container">
+        <h1 id="nav-title">Photo App</h1>
+        <ul id="nav-items">
+            {% if user %}
+            <li>
+                {% if request.url_rule.endpoint == 'api_docs' %}
+                <a href="/">Home</a>
+                {% else %}
+                <a href="/api">API Docs</a>
+                {% endif %}
+            </li>
+            <li><span id="nav-username">{{ user.username }}</span></li>
+            <li id="app-logout"><a href="/logout">Sign out</a></li>
+            {% endif %}
+        </ul>
+    </div>
 </nav>

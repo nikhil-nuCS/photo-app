@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Photo App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa|Lora|Inter|Titillium Web" />
+
+    <link rel="stylesheet" href="/static/css/login-page.css">
+</head>
+
+<body>
+    <!-- Nav Bar still rendered via server-side template -->
+    {% include 'includes/navbar.html' %}
+    <div class="form-overlay">
+        <form class="login-form" method="POST" action="/login">
+            <header class="login-header">
+                <h2>Log in</h2>
+                <p>login using username and password</p>
+            </header>
+            <div class="fields">
+                <div class="field-set">
+                    <span class="material-icons">account_circle</span>
+                    <input class="form-input" aria-label="username" id="txt-input" type="text" placeholder="@Username"
+                        name="username" required>
+                </div>
+                <div class="field-set">
+                    <span class="material-icons">key</span>
+                    <input class="form-input" aria-label="password" id="txt-password" type="password"
+                        placeholder="@Password" name="password" required>
+                </div>
+
+                {% if message %}
+                <div class="errors"> 
+                    <span class="material-icons" style="color: #ff0202;">error</span>  
+                    <span class="error-message">{{ message }} </span>
+                </div>
+                {% endif %}
+
+                <button class="login-btn" type="submit">Log In</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
