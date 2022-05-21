@@ -29,8 +29,7 @@ function postItem2Html(post) {
         <div class="post-user-comments">
           <div id="card-comment-feature">
             <span id="comment-emoji" class="material-icons">sentiment_satisfied_alt</span>
-            <input name="comment-on-post-${post.id}" class="post-comment" id="post-comment-${post.id}" type="text" placeholder="Add a comment ...">
-            <label style="display:none" for="post-comment-${post.id}"></label>
+            <input name="comment-on-post-${post.id}" aria-label="post a comment" class="post-comment" id="post-comment-${post.id}" type="text" placeholder="Add a comment ...">
           </div>
           <button id="comment-publish"
           data-postid = ${post.id}
