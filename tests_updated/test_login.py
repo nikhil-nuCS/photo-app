@@ -60,6 +60,7 @@ class TestLoginEndpoint(unittest.TestCase):
     def test_home_redirects_to_login_without_jwt(self):
         url = '{0}/'.format(root_url)
         response = requests.get(url)
+        
         # check that it redirected to the home screen:
         self.assertEqual(response.url, '{0}/login'.format(root_url))
         self.assertTrue(response.status_code, 200)

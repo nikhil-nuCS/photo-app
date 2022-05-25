@@ -91,7 +91,7 @@ class TestLikePostDetailEndpoint(unittest.TestCase):
             liked_post.get('post_id'), 
             liked_post.get('id')
         )
-        # print(url)
+        print(url)
         response = requests.delete(url)
         self.assertTrue(response.status_code, 401)
 
