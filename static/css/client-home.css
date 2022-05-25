@@ -133,13 +133,18 @@ h4 {
     nav > div > ul > li {
         margin-left: 5px;
         margin-right: 5px;
-        font-size: 9pt;
+        font-size: 11pt;
         font-family: Lato;
         font-weight: 600;
     }
+
+    #nav-username {
+        font-family: Lato;
+        font-size: 11pt;
+        font-weight: 600;
+    }    
     
     .page-content {
-        margin-top: 80px;
         width: 100%;
         display: flex;
         align-items: center;
