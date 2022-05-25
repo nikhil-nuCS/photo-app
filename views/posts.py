@@ -2,6 +2,7 @@ from flask import Response, request
 from flask_restful import Resource
 from models import Post, db
 from views import get_authorized_user_ids
+import flask_jwt_extended
 
 import json
 
@@ -13,10 +14,8 @@ class PostListEndpoint(Resource):
     def __init__(self, current_user):
         self.current_user = current_user
 
+    @flask_jwt_extended.jwt_required()
     def get(self):
-        # get posts created by one of these users:
-        # print(get_authorized_user_ids(self.current_user))
-        # print (posts)
         limit = request.args.get("limit") or 20
         try:
             limit = int(limit)
@@ -32,11 +31,10 @@ class PostListEndpoint(Resource):
             ]
         return Response(json.dumps(data), mimetype="application/json", status=200)
 
-
+    @flask_jwt_extended.jwt_required()
     def post(self):
         # create a new post based on the data posted in the body 
         body = request.get_json()
-        # print(body)  
         
         if not body.get("image_url"):
             return Response(json.dumps({"message": "No image url found. Image url is required."}), mimetype="application/json", status=400)
@@ -57,7 +55,7 @@ class PostDetailEndpoint(Resource):
     def __init__(self, current_user):
         self.current_user = current_user
         
-
+    @flask_jwt_extended.jwt_required()
     def patch(self, id):
         # update post based on the data posted in the body 
         body = request.get_json()
@@ -78,7 +76,7 @@ class PostDetailEndpoint(Resource):
         db.session.commit()
         return Response(json.dumps(post.to_dict()), mimetype="application/json", status=200)
 
-
+    @flask_jwt_extended.jwt_required()
     def delete(self, id):
         post = Post.query.get(id)
         if not post:
@@ -92,7 +90,7 @@ class PostDetailEndpoint(Resource):
         db.session.commit()
         return Response(json.dumps({"message":  "Post id={0} successfully deleted".format(id)}), mimetype="application/json", status=200)
 
-
+    @flask_jwt_extended.jwt_required()
     def get(self, id):
         post = Post.query.get(id)
         if not post:
@@ -107,10 +105,10 @@ def initialize_routes(api):
     api.add_resource(
         PostListEndpoint, 
         '/api/posts', '/api/posts/', 
-        resource_class_kwargs={'current_user': api.app.current_user}
+        resource_class_kwargs={'current_user': flask_jwt_extended.current_user}
     )
     api.add_resource(
         PostDetailEndpoint, 
         '/api/posts/<int:id>', '/api/posts/<int:id>/',
-        resource_class_kwargs={'current_user': api.app.current_user}
+        resource_class_kwargs={'current_user': flask_jwt_extended.current_user}
     )
