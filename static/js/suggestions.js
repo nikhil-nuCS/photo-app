@@ -51,6 +51,7 @@ const createFollowRequest = (toUserId, element) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      'X-CSRF-TOKEN' : getCookie("csrf_access_token")
     },
     body: JSON.stringify(postBody)
   })
@@ -71,6 +72,7 @@ const createUnfollowRequest = element => {
     method: "DELETE",
     headers: {
       'Content-Type': 'application/json',
+      'X-CSRF-TOKEN' : getCookie("csrf_access_token")
     }
   })
     .then(response => response.json())

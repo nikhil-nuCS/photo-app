@@ -166,6 +166,7 @@ async function reloadThePost(postDetails, completionHandler) {
     method: "GET",
     headers: {
       'Content-Type': 'application/json',
+      'X-CSRF-TOKEN' : getCookie("csrf_access_token")
     }
   })
     .then(response => response.json())
@@ -190,6 +191,7 @@ function addLikeOnPost(postDetails) {
     method: "POST",
     headers: {
       'Content-Type': 'application/json',
+      'X-CSRF-TOKEN' : getCookie("csrf_access_token")
     },
     body: JSON.stringify(bodyData)
   })
@@ -209,6 +211,7 @@ function deleteLikeOnPost(postDetails) {
     method: "DELETE",
     headers: {
       'Content-Type': 'application/json',
+      'X-CSRF-TOKEN' : getCookie("csrf_access_token")
     }
   })
     .then(response => response.json())
@@ -232,6 +235,7 @@ function addBookmarkOnPost(postDetails) {
     method: "POST",
     headers: {
       'Content-Type': 'application/json',
+      'X-CSRF-TOKEN' : getCookie("csrf_access_token")
     },
     body: JSON.stringify(bodyData)
   })
@@ -251,6 +255,7 @@ function deleteBookmarkOnPost(postDetails) {
     method: "DELETE",
     headers: {
       'Content-Type': 'application/json',
+      'X-CSRF-TOKEN' : getCookie("csrf_access_token")
     }
   })
     .then(response => response.json())
@@ -275,6 +280,7 @@ function handlePostingComment(event) {
     method: "POST",
     headers: {
       'Content-Type': 'application/json',
+      'X-CSRF-TOKEN' : getCookie("csrf_access_token")
     },
     body: JSON.stringify(bodyData)
   })
