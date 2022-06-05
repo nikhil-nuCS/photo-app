@@ -1,7 +1,30 @@
 import React from "react";
+import { getHeaders } from "../../utils";
 
 class NavBar extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            userProfile: null
+        }
+    }
+
+    componentDidMount = () => {
+        fetch('/api/profile', {
+            headers: getHeaders()
+        })
+            .then(response => response.json())
+            .then(profile => {
+                console.log(profile)
+                this.setState({ userProfile: profile })
+            })
+    }
+
     render() {
+        var usernameToDisplay = "username"
+        if (this.state.userProfile !== null) {
+            usernameToDisplay = this.state.userProfile.username
+        }
         return (
             <nav class="nav-bar">
                 <div class="nav-container">
@@ -10,7 +33,7 @@ class NavBar extends React.Component {
                         <li>
                             <a href="/api">API Docs</a>
                         </li>
-                        <li><span id="nav-username">webdev</span></li>
+                        <li><span id="nav-username">{usernameToDisplay}</span></li>
                         <li id="app-logout"><a href="/logout">Sign out</a></li>
                     </ul>
                 </div>
