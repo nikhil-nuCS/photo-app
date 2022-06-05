@@ -35,7 +35,7 @@ class Post extends React.Component {
         return (
             <div class="cardview">
                 <PostInfo username={this.state.info.user.username} />
-                <PostImage postImage={this.state.info.image_url} />
+                <PostImage postImage={this.state.info.image_url} id={this.state.info.id}/>
                 <PostDetails info={this.state.info} reloadPost={this.reloadPost} />
                 <div id="post-divider-line"></div>
                 <PostPublishComment id={this.state.info.id} reloadPost={this.reloadPost} />

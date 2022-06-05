@@ -33,7 +33,6 @@ if (hasCsrfToken() && window.location.port !== '3000') {
     console.log('Authentication handled via CSRF + Http-only cookie.')
     renderApp();
 } else {
-    console.log(window.location.port === '3000')
     // this executes if the app is run via npm start
     console.log('Authentication handled via REST API Token.')
     setAccessTokenCookie('webdev', 'password', renderApp);

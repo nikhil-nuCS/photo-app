@@ -63,7 +63,7 @@ class Suggestion extends React.Component {
         return (
             <div class="suggested-panel">
                 <div id="suggestion-left">
-                    <img id="suggestion-pic" src={this.props.image_url} />
+                    <img id="suggestion-pic" src={this.props.image_url} alt={"profile pic user-"+this.props.id} />
                     <div id="suggested-user">
                         <span id="suggested-username"> {this.props.username} </span>
                         <span id="suggested-label">suggested for you</span>

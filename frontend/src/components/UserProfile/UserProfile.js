@@ -27,7 +27,7 @@ class UserProfile extends React.Component {
         }
         return (
             <div class="user-profile">
-                <img id="profile-pic" src={this.state.userProfile.thumb_url} alt="user picture" />
+                <img id="profile-pic" src={this.state.userProfile.thumb_url} alt="profile user" />
                 <label id="profile-username"> {this.state.userProfile.username} </label>
             </div>
         );
