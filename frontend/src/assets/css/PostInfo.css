@@ -1,0 +1,13 @@
+.cardview .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  margin: 10px;
+}
+
+.card-header #card-publisher {
+  font-weight: 900;
+  font-family: Lato;
+  font-size: 13pt;
+}

@@ -1,8 +1,10 @@
 *.pyc
 .DS_Store
-bin
-lib
-Scripts
-.env
-env
-venv
+backend/bin
+backend/lib
+backend/Scripts
+backend/.env
+backend/env
+backend/venv
+frontend/node_modules
+frontend/build

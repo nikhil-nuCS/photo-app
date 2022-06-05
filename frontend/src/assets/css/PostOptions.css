@@ -1,0 +1,10 @@
+.card-details #post-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 15px;
+}
+
+#post-options-left > button {
+  margin-right: 7px;
+}

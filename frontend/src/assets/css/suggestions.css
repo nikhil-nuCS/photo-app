@@ -1,0 +1,80 @@
+.suggestions-panel {
+    margin-top: 15px;
+    width: 275px;
+  }
+  
+  .user-suggestions #suggestions-title {
+    font-weight: 900;
+    font-family: Assistant;
+    font-size: 15pt;
+    color: #373740;
+  }
+  
+  .suggestions-list #suggestion-item {
+    margin-bottom: 4%;
+  }
+  
+  .suggested-panel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .suggested-panel #suggestion-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 85%;
+  }
+  
+  .suggested-panel #suggestion-right {
+    width: 15%;
+  }
+  
+  .suggested-panel #suggestion-pic {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 3px solid #819F94;
+  }
+  
+  .suggested-panel #suggested-user {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 15px;
+  }
+  
+  #suggested-user #suggested-username {
+    font-weight: 700;
+    font-family: Lato;
+    font-size: 11pt;
+  }
+  
+  #suggested-user #suggested-label {
+    font-weight: 400;
+    font-family: Assistant;
+    font-size: 11pt;
+    color: #373740;
+    /* opacity: 0.9; */
+  }
+  
+  #suggestion-right > button {
+    font-family: Rubik;
+    font-size: 12pt;
+    font-weight: 700;
+    color: #23406e;
+    cursor: pointer;
+    padding: 5px;
+  }
+  .user-follow {
+    background-color: transparent;
+    background: none;
+    border: none;
+  }
+  
+  .user-unfollow {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+  }

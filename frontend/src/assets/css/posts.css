@@ -1,0 +1,54 @@
+.posts {
+  width: 75%;
+}
+
+.posts > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.posts > ul > .card-item {
+  margin-bottom: 5%;
+}
+
+#post-divider-line {
+  margin-top: 10px;
+  border-bottom: 2px solid gray;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .posts {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .page-content .right-column {
+    display: none;
+  }
+
+  .cardview {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 2px solid #4e5a5f;
+    border-radius: 6pt;
+  }
+
+  .card-details {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    margin-top: 10px;
+  }
+}
+
+.material-icons.post-liked {
+  color: red;
+}
+
+.material-icons.post-bookmarked {
+  color: black;
+}

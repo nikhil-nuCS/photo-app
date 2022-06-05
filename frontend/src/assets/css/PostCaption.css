@@ -1,0 +1,29 @@
+.card-caption {
+  display: inline-block;
+  justify-content: space-between;
+}
+
+.card-caption #caption-username {
+  font-weight: 900;
+  font-family: Lato;
+  font-size: 12pt;
+  color: black;
+  margin-right: 4px;
+}
+
+.card-caption #caption-text {
+  font-weight: 300;
+  font-family: Assistant;
+  font-size: 12pt;
+  margin-right: 4px;
+}
+
+.card-caption #caption-more > a {
+  font-weight: 500;
+  font-family: Rubik;
+  font-size: 12pt;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #23406e;
+}

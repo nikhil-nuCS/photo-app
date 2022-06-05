@@ -1,0 +1,7 @@
+.cardview {
+  display: flex;
+  flex-direction: column;
+  border: solid 2px #4e5a5f;
+  border-radius: 6pt;
+  background-color: white;
+}
