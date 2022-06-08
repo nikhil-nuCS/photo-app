@@ -1,0 +1,2 @@
+- Attempted Extra-credit :: Deploy to Heroku using First method (i.e., only React deployment)
+- Heroku Link :: https://photo-app-nk-onlyreact.herokuapp.com/

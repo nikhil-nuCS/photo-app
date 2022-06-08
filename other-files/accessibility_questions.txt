@@ -1,0 +1,11 @@
+Q: Were React's compilation warning/error messages helpful?
+Ans: Yes. React's messages were tremendously helpful in debugging the issues I faced during the development. Additionally, I installed the "React Developer Tools" for the browser, which increased the visibility of the error messages.
+
+Q: Did React's compilation warning/error messages prompt you to consider making your site more accessible?
+Ans: Yes. The warning messages in the browser console prompted changes related to aria-checked and aria-labels. These messages are triggered by webpackHotDevClient.js. The same statements are displayed in the terminal console while compiling the react app. 
+
+Q: Did you consider conducting accessibility testing on your lab assignment? Why or why not?
+Ans: I did not complete the lab 10 assignment, but I did consider conducting accessibility testing on the final react homework version.
+
+Q: If you tested your site for accessibility and found issues, were you able to solve them? What did you do to try to solve them? What stopped you from successfully resolving or trying to resolve the issues?
+Ans: Yes. I faced accessibility issues in the buttons that I had used in the React component. For example, the aria-checked property was updated when the user interacted with the button without assigning it a role. I was able to resolve this issue. Currently, the site does not support screen reading. The website would require additional development effort to add this support, which is also why this feature is not supported.
